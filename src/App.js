@@ -1,8 +1,14 @@
 
 import { useState } from 'react';
 import './App.css';
-import Content from './companents/Content';
+// import Content from './companents/Content';
 import Nav from './companents/Nav';
+import { Route, Routes } from 'react-router-dom';
+import Main from './pages/Main';
+import About from './pages/About';
+import Portfolio from './pages/Portfolio';
+import NotPage from './pages/NotPage';
+// import Styled from './companents/Styled';
 
 // function Content(props){
 //   console.log(props)
@@ -28,22 +34,34 @@ function App() {
   
 
   return (
-    <div className="App">
+
+    <>
+    
       <Nav />
-      {/* <h3 className={Name} style={{color: "orange"}}>Hello React {Name}</h3> */}
-      <div className='content'>
-        <Content arrayNum = "0" />
-        <Content arrayNum = "1" />
-        <Content arrayNum = "2" />
-        <Content arrayNum = "3" />
-      </div>
-      <div className='content'>
-        <Content title="쌍둥이 아기판다" desc="스페셜 이벤트" desc2="테스트1" arrayNum = "0" />
-        <Content title="쌍둥이 아기판다" desc="이름을 지어주세요" desc2="테스트2" arrayNum = "1" />
-        <Content title="주토피아 동물 아카데미" desc="판다는 곰이 맞을까?" desc2="테스트3" arrayNum = "2" />
-        <Content title="귀엽게 찰칵!" desc="에버랜드 AR필터" desc2="테스트4" arrayNum = "3" />
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<Main/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/portfolio" element={<Portfolio/>}/>
+        <Route path="/*" element={<NotPage/>}/>
+      </Routes>
+    </>
+
+    // <div className="App">
+    //   {/* <h3 className={Name} style={{color: "orange"}}>Hello React {Name}</h3> */}
+    //   <div className='content'>
+    //     <Content arrayNum = "0" />
+    //     <Content arrayNum = "1" />
+    //     <Content arrayNum = "2" />
+    //     <Content arrayNum = "3" />
+    //   </div>
+    //   <div className='content'>
+    //     <Content title="쌍둥이 아기판다" desc="스페셜 이벤트" desc2="테스트1" arrayNum = "0" />
+    //     <Content title="쌍둥이 아기판다" desc="이름을 지어주세요" desc2="테스트2" arrayNum = "1" />
+    //     <Content title="주토피아 동물 아카데미" desc="판다는 곰이 맞을까?" desc2="테스트3" arrayNum = "2" />
+    //     <Content title="귀엽게 찰칵!" desc="에버랜드 AR필터" desc2="테스트4" arrayNum = "3" />
+    //   </div>
+    //   <Styled />
+    // </div>
   );
 }
 
